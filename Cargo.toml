@@ -1,0 +1,24 @@
+[package]
+name = "trashwin"
+version = "0.1.0"
+edition = "2021"
+description = "Geri alınabilir Windows 10/11 ayar ve uygulama kurulum aracı"
+license = "MIT"
+repository = "https://github.com/kaan237/TrashWin"
+build = "build.rs"
+
+[dependencies]
+eframe = "=0.29.1"
+winreg = "0.52"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[build-dependencies]
+embed-manifest = "1.4"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

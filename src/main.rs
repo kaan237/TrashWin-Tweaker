@@ -360,10 +360,12 @@ fn toggle(set: &mut HashSet<&'static str>, id: &'static str, on: bool) {
     }
 }
 
+type Step = fn(&Tweak, &mut dyn FnMut(String)) -> Result<(), String>;
+
 fn run_all(
     ts: &[&'static Tweak],
     verb: &str,
-    f: fn(&Tweak, &mut dyn FnMut(String)) -> Result<(), String>,
+    f: Step,
     log: &mut dyn FnMut(String),
 ) {
     let mut ok = 0;

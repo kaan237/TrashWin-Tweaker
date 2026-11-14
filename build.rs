@@ -5,7 +5,7 @@ fn main() {
     // Registry HKLM ve servis ayarları yönetici izni ister; UAC'yi açılışta bir kez sor.
     if std::env::var_os("CARGO_CFG_WINDOWS").is_some() {
         embed_manifest(
-            new_manifest("TrashWin").requested_execution_level(ExecutionLevel::RequireAdministrator),
+            new_manifest("TrashWin Tweaker").requested_execution_level(ExecutionLevel::RequireAdministrator),
         )
         .expect("manifest gömülemedi");
     }

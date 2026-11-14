@@ -624,7 +624,7 @@ pub static TWEAKS: &[Tweak] = &[
     },
 ];
 
-pub const RESTORE_POINT: &str = "Enable-ComputerRestore -Drive \"$env:SystemDrive\\\" -ErrorAction SilentlyContinue; Checkpoint-Computer -Description 'TrashWin' -RestorePointType MODIFY_SETTINGS -ErrorAction Stop; 'Geri yükleme noktası hazır'";
+pub const RESTORE_POINT: &str = "Enable-ComputerRestore -Drive \"$env:SystemDrive\\\" -ErrorAction SilentlyContinue; Checkpoint-Computer -Description 'TrashWin Tweaker' -RestorePointType MODIFY_SETTINGS -ErrorAction Stop; 'Geri yükleme noktası hazır'";
 
 
 #[cfg(test)]

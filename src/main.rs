@@ -51,12 +51,12 @@ const MUTED: Color32 = Color32::from_rgb(0x9c, 0xa3, 0xaf);
 fn main() -> eframe::Result<()> {
     let opts = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("TrashWin")
+            .with_title("TrashWin Tweaker")
             .with_inner_size([1040.0, 700.0])
             .with_min_inner_size([780.0, 480.0]),
         ..Default::default()
     };
-    eframe::run_native("TrashWin", opts, Box::new(|cc| Ok(Box::new(Gui::new(cc)))))
+    eframe::run_native("TrashWin Tweaker", opts, Box::new(|cc| Ok(Box::new(Gui::new(cc)))))
 }
 
 impl Gui {
@@ -77,7 +77,7 @@ impl Gui {
             rx,
             file_log: engine::Logger::open(),
         };
-        g.push(format!("TrashWin {} başladı. Yedek klasörü: {}", env!("CARGO_PKG_VERSION"), engine::data_dir().display()));
+        g.push(format!("TrashWin Tweaker {} başladı. Yedek klasörü: {}", env!("CARGO_PKG_VERSION"), engine::data_dir().display()));
         g.refresh();
         g
     }
@@ -150,7 +150,7 @@ impl Gui {
 
     fn sidebar(&mut self, ui: &mut egui::Ui) {
         ui.add_space(10.0);
-        ui.heading(RichText::new("TrashWin").color(ACCENT).strong());
+        ui.heading(RichText::new("TrashWin Tweaker").color(ACCENT).strong());
         ui.label(RichText::new("geri alınabilir Windows ayarları").small().color(MUTED));
         ui.add_space(14.0);
         for c in Cat::ALL {
@@ -170,7 +170,7 @@ impl Gui {
         }
         ui.with_layout(egui::Layout::bottom_up(egui::Align::Min), |ui| {
             ui.add_space(8.0);
-            ui.hyperlink_to("GitHub", "https://github.com/kaan237/TrashWin");
+            ui.hyperlink_to("GitHub", "https://github.com/kaan237/TrashWin-Tweaker");
             ui.label(RichText::new(format!("v{}", env!("CARGO_PKG_VERSION"))).small().color(MUTED));
         });
     }

@@ -1,20 +1,20 @@
-# TrashWin
+# TrashWin Tweaker
 
 Windows 10/11 için geri alınabilir ayar aracı ve toplu uygulama kurucu. Rust ile yazıldı, tek bir `.exe`, kurulum yok.
 
-[![build](https://github.com/kaan237/TrashWin/actions/workflows/build.yml/badge.svg)](https://github.com/kaan237/TrashWin/actions/workflows/build.yml)
+[![build](https://github.com/kaan237/TrashWin-Tweaker/actions/workflows/build.yml/badge.svg)](https://github.com/kaan237/TrashWin-Tweaker/actions/workflows/build.yml)
 ![platform](https://img.shields.io/badge/platform-Windows%2010%20%2F%2011-0078D4)
 ![lisans](https://img.shields.io/badge/lisans-MIT-green)
 
-TrashWin bir "FPS katlayıcı" değil. Gizlilik, performans, oyun, ağ ve görünüm ayarlarını tek yerde toplar. Her ayarın registry'de neyi değiştirdiğini uygulamadan önce gösterir ve dokunduğu her değerin eski halini saklar. Geri al dediğinde değer, bilgisayarın uygulamadan önceki haline döner. Windows varsayılanını tahmin etmez.
+TrashWin Tweaker bir "FPS katlayıcı" değil. Gizlilik, performans, oyun, ağ ve görünüm ayarlarını tek yerde toplar. Her ayarın registry'de neyi değiştirdiğini uygulamadan önce gösterir ve dokunduğu her değerin eski halini saklar. Geri al dediğinde değer, bilgisayarın uygulamadan önceki haline döner. Windows varsayılanını tahmin etmez.
 
 ## Neden başka bir tweaker?
 
-Çoğu tweaker "geri al" düğmesinde Windows varsayılanını tahmin eder. Değeri senin ayarın yerine kendi bildiği bir sayıya çeker. TrashWin bunu şöyle çözer:
+Çoğu tweaker "geri al" düğmesinde Windows varsayılanını tahmin eder. Değeri senin ayarın yerine kendi bildiği bir sayıya çeker. TrashWin Tweaker bunu şöyle çözer:
 
-| | TrashWin |
+| | TrashWin Tweaker |
 |---|---|
-| Geri alma | Uygulamadan önce her registry değerinin eski hali `backup.json`'a yazılır. Yedek diske kaydedilmeden hiçbir değer değişmez. Geri alırken birebir eski değer, değer yoksa silme, anahtarı TrashWin açtıysa boş anahtarı da temizleme |
+| Geri alma | Uygulamadan önce her registry değerinin eski hali `backup.json`'a yazılır. Yedek diske kaydedilmeden hiçbir değer değişmez. Geri alırken birebir eski değer, değer yoksa silme, anahtarı TrashWin Tweaker açtıysa boş anahtarı da temizleme |
 | Şeffaflık | Her kartta "Ne değişecek?" bölümü: tam registry yolu, değer ve çalışacak komut |
 | Durum | Her ayar için registry okunur: `uygulandı`, `kısmen` veya `varsayılan` |
 | Güvenlik | Riskli ayarlar onay penceresi açar. Bilinmeyen tipte bir registry değerinin üzerine yazılmaz. Komutlar `cmd /c` ile birleştirilmez, argüman olarak verilir. PowerShell betikleri `-EncodedCommand` ile gider, tırnak kaçışı sorunu olmaz |
@@ -39,9 +39,9 @@ TrashWin bir "FPS katlayıcı" değil. Gizlilik, performans, oyun, ağ ve görü
 
 ## Kullanım
 
-1. [Releases](https://github.com/kaan237/TrashWin/releases) sayfasından `TrashWin.exe`'yi indir. İstersen `TrashWin.exe.sha256` ile doğrula:
+1. [Releases](https://github.com/kaan237/TrashWin-Tweaker/releases) sayfasından `TrashWin-Tweaker.exe`'yi indir. İstersen `TrashWin-Tweaker.exe.sha256` ile doğrula:
    ```powershell
-   (Get-FileHash .\TrashWin.exe -Algorithm SHA256).Hash
+   (Get-FileHash .\TrashWin-Tweaker.exe -Algorithm SHA256).Hash
    ```
 2. Çalıştır. UAC yönetici izni ister, çünkü HKLM ve servis ayarları bunu gerektirir.
 3. Soldan kategori seç, ayarları işaretle, **uygula**. Geri almak için aynı ayarları işaretleyip **geri al**.
@@ -60,11 +60,11 @@ Yedek ve günlük dosyaları burada durur:
 Gereken: [Rust](https://rustup.rs) (stable, MSVC toolchain).
 
 ```powershell
-git clone https://github.com/kaan237/TrashWin.git
-cd TrashWin
+git clone https://github.com/kaan237/TrashWin-Tweaker.git
+cd TrashWin-Tweaker
 cargo test
 cargo build --release
-# çıktı: target\release\trashwin.exe
+# çıktı: target\release\trashwin-tweaker.exe
 ```
 
 `v*` etiketi push'lanınca GitHub Actions exe'yi derler, SHA-256'sını hesaplar ve Release'e ekler.
@@ -101,11 +101,11 @@ Servis `Start` değerleri için `svc(yol, yeni, varsayılan)` kullan. Testler, s
 
 ## Gizlilik
 
-TrashWin hiçbir yere veri göndermez. Telemetri yok, güncelleme kontrolü yok. İnternete yalnızca WinGet kurulumları, DISM onarımı ve .NET 3.5 kurulumu çıkar.
+TrashWin Tweaker hiçbir yere veri göndermez. Telemetri yok, güncelleme kontrolü yok. İnternete yalnızca WinGet kurulumları, DISM onarımı ve .NET 3.5 kurulumu çıkar.
 
 ## Teşekkür
 
-Fikir, [QT-DelayLess/ChaosBoost-Tweaker](https://github.com/QT-DelayLess/ChaosBoost-Tweaker)'dan esinlendi. TrashWin onun kodunu kopyalamaz. Rust ile sıfırdan yazıldı ve yedekten geri alma üzerine kuruldu.
+Fikir, [QT-DelayLess/ChaosBoost-Tweaker](https://github.com/QT-DelayLess/ChaosBoost-Tweaker)'dan esinlendi. TrashWin Tweaker onun kodunu kopyalamaz. Rust ile sıfırdan yazıldı ve yedekten geri alma üzerine kuruldu.
 
 ## Lisans
 

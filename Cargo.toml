@@ -1,10 +1,10 @@
 [package]
-name = "trashwin"
+name = "trashwin-tweaker"
 version = "0.1.0"
 edition = "2021"
 description = "Geri alınabilir Windows 10/11 ayar ve uygulama kurulum aracı"
 license = "MIT"
-repository = "https://github.com/kaan237/TrashWin"
+repository = "https://github.com/kaan237/TrashWin-Tweaker"
 build = "build.rs"
 
 [dependencies]
